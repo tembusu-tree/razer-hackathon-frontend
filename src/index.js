@@ -1,13 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./services/translation";
+
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.Fragment>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.Fragment>,
   document.getElementById("root")
 );
 

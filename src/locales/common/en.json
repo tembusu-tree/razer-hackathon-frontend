@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Home",
+    "loans": "Apply for Loans",
+    "bills": "Pay Bills",
+    "services": "Services",
+    "settings": "Settings"
+  },
+  "errors": {
+    "not_found_title": "Looks like you're lost",
+    "not_found_description": "the page you're looking for doesn't exist"
+  },
+  "common": {
+    "take_me_back": "Take me back",
+    "welcome_user": "Welcome back, {{name}}"
+  },
+  "settings": {
+    "change_language": "Change Language",
+    "change_language_description": "Changes the display language for this site",
+    "language_en": "English",
+    "language_id": "Indonesian"
+  }
+}

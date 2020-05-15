@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "counter": "Counter",
+    "analytics": "Analitika",
+    "history": "Sejarah",
+    "settings": "Pengaturan",
+    "company": "Perusahaan Saya"
+  },
+  "errors": {
+    "not_found_title": "Kelihatannya anda tersesat",
+    "not_found_description": "halaman yang anda cari tidak ada"
+  },
+  "common": {
+    "take_me_back": "Bawa saya kembali",
+    "welcome_user": "Selamat datang, {{name}}"
+  },
+  "settings": {
+    "change_language": "Penggantian Bahasa",
+    "change_language_description": "Mengganti bahasa yang digunakan oleh site ini",
+    "language_en": "Bahasa Inggris",
+    "language_id": "Bahasa Indonesia"
+  }
+}
