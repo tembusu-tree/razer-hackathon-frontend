@@ -38,7 +38,7 @@ function App() {
             <main className={classes.pageContent}>
               <Helmet>
                 <meta charSet="utf-8" />
-                <title>Company Page</title>
+                <title>Tembusu Tree</title>
               </Helmet>
               <Switch>
                 {publicRoutes.map((options, i) => {
