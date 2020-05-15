@@ -10,6 +10,9 @@ import { useHistory, useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { isPublicRoute } from "../../utils/routes";
 import useLanguage from "../../utils/hooks/useLanguage";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import Box from "@material-ui/core/Box";
+import useTheming from "../../utils/hooks/useTheming";
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 const drawerWidth = 240;
@@ -57,6 +60,7 @@ function NavigationDrawer(props) {
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();
+  const { spacing } = useTheming();
   const { t } = useLanguage();
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -77,6 +81,15 @@ function NavigationDrawer(props) {
 
   const content = (
     <div className={classes.drawerContentContainer}>
+      <Box
+        marginTop={3}
+        marginBottom={4}
+        marginLeft={-1}
+        justifyContent="center"
+        display="flex"
+      >
+        <Logo width={spacing(10)} height={spacing(10)} />
+      </Box>
       <div className={classes.navListContainer}>
         <List>
           {navItems.map((item) => {

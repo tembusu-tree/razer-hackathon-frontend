@@ -4,7 +4,7 @@ const lightTheme = createMuiTheme({
   palette: {
     type: "light",
     primary: {
-      main: "#0277bd",
+      main: "#43A047",
     },
     dashboard: {
       backgroundColor: "rgba(0,0,0,0.8)",
