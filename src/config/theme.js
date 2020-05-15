@@ -7,9 +7,10 @@ const lightTheme = createMuiTheme({
       main: "#0277bd",
     },
     dashboard: {
-      backgroundColor: "rgba(200,200,200,0.4)",
-      iconColor: "#000",
-      activeColor: "rgba(0,0,0,0.1)",
+      backgroundColor: "rgba(0,0,0,0.8)",
+      activeColor: "rgba(255,255,255,0.11)",
+      textColor: "#E0E0E0",
+      hoverColor: "rgba(255,255,255,0.2)",
     },
   },
   typography: {

@@ -21,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
       flexShrink: 0,
     },
   },
+  listItem: {
+    "&:hover": {
+      backgroundColor: theme.palette.dashboard.hoverColor,
+    },
+  },
   activeListItem: {
     backgroundColor: theme.palette.dashboard.activeColor,
   },
@@ -40,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(https://i.picsum.photos/id/872/200/400.jpg)`,
     backgroundSize: "cover",
     borderRight: 0,
+  },
+  navText: {
+    color: theme.palette.dashboard.textColor,
   },
 }));
 
@@ -90,10 +98,15 @@ function NavigationDrawer(props) {
                 onClick={() => {
                   onPressNavLink(link);
                 }}
-                className={clsx(isActive && classes.activeListItem)}
+                className={clsx(
+                  isActive && classes.activeListItem,
+                  classes.listItem
+                )}
                 key={key}
               >
-                <ListItemText>{t(`nav.${key}`)}</ListItemText>
+                <ListItemText className={classes.navText}>
+                  {t(`nav.${key}`)}
+                </ListItemText>
               </ListItem>
             );
           })}
