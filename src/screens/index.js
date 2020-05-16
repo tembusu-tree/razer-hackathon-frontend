@@ -31,9 +31,4 @@ const Register = Loadable({
   loading: Loader,
 });
 
-const RegisterSuccess = Loadable({
-  loader: () => import("./RegisterSuccess"),
-  loading: Loader,
-});
-
-export { Home, Register, RegisterSuccess, Landing, Login, Settings, NotFound };
+export { Home, Register, Landing, Login, Settings, NotFound };

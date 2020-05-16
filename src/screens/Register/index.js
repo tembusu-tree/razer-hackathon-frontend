@@ -86,6 +86,7 @@ function CorpPassCard({ onSkip = () => {} }) {
     <Grid className={classes.cardContentContainer} container direction="row">
       <Grid item>
         <img
+          alt={"CorpPass"}
           className={classes.corppassImage}
           src={require("../../assets/images/corppass.png")}
         />
@@ -173,7 +174,7 @@ function RegisterPersonal() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      history.push("/register/success");
+      history.push("/business/profile");
     }, 2000);
   }
 

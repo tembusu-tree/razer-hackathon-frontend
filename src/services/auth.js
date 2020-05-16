@@ -1,4 +1,5 @@
+import { localStorageItemExists } from "../utils/storage";
+
 export const isAuthenticated = () => {
-  // uncomment to undebug
-  return false;
+  return localStorageItemExists();
 };

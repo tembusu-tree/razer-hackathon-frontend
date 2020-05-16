@@ -4,7 +4,6 @@ import {
   Home,
   Settings,
   Login,
-  RegisterSuccess,
   Register,
 } from "../screens";
 
@@ -23,11 +22,6 @@ export const publicRoutes = [
     key: "register",
     link: "/register",
     component: Register,
-  },
-  {
-    key: "register",
-    link: "/register/success",
-    component: RegisterSuccess,
   },
 ];
 
