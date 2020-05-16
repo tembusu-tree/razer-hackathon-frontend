@@ -37,6 +37,7 @@ const profiles = [
   { key: "computer_hardware" },
   { key: "computer_software" },
   { key: "healthcare_services" },
+  { key: "design" },
 ];
 
 const styles = makeStyles((theme) => ({
@@ -109,8 +110,6 @@ function BusinessProfile(props) {
     }, 1500);
   }
 
-  const hasChanged = false;
-
   return (
     <div className={classes.container}>
       <Container maxWidth="md">
@@ -175,7 +174,7 @@ function BusinessProfile(props) {
                   <Spacing width={1} />
                   <Button
                     onClick={onUpdateClick}
-                    disabled={!hasChanged || loading}
+                    disabled={loading}
                     variant="contained"
                     color="primary"
                   >

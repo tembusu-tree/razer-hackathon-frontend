@@ -64,7 +64,7 @@
   },
   "business_profile": {
     "title": "Which phrases best describes your business?",
-    "update": "Update",
+    "update": "Next",
     "online": "Online",
     "food": "Food and beverages",
     "fashion": "Fashion",
@@ -77,7 +77,8 @@
     "appliances": "Appliances",
     "computer_hardware": "Computer hardware",
     "computer_software": "Computer software",
-    "healthcare_services": "Healthcare services"
+    "healthcare_services": "Healthcare services",
+    "design": "Design"
   },
   "apply_loan": {
     "title": "Do you use any of these platforms?",
@@ -120,5 +121,21 @@
     "singtel": "Singtel",
     "singtel_description": "Pay for internet and phone bills with our seamless and solid integration.",
     "start_now": "Start now"
+  },
+  "rewards": {
+    "title": "Current Rewards",
+    "not_available": "Not available",
+    "achievements": "Achievements",
+    "reward_placeholder_title_1": "GrabPay",
+    "reward_placeholder_description_1": "$5 off your next GrabFood bill paid using GrabPay.",
+    "reward_placeholder_title_2": "Starhub",
+    "reward_placeholder_description_2": "S$10 off your next monthly bill.",
+    "reward_placeholder_title_3": "Digital Ocean",
+    "reward_placeholder_description_3": "5$ off valid for the next 3 months.",
+
+    "achievement_placeholder_title_1": "Fresh off the boat",
+    "achievement_placeholder_description_1": "Used one of the services in our platform.",
+    "achievement_placeholder_title_2": "The best of the best",
+    "achievement_placeholder_description_2": "Used one of the services suggested by our platform"
   }
 }

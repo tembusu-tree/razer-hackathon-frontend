@@ -9,13 +9,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import StandardPageHeader from "../../components/StandardPageHeader";
 import { connect } from "react-redux";
 import useLanguage from "../../utils/hooks/useLanguage";
+import Spacing from "../../components/Spacing";
 
 const styles = makeStyles((theme) => ({
   container: {
     flex: 1,
     display: "flex",
     minHeight: "100vh",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
     backgroundColor: theme.palette.background.default,
   },
@@ -34,24 +35,23 @@ function Home(props) {
       <Container maxWidth="lg">
         <Fade in>
           <div className={classes.contentContainer}>
+            <Spacing height={5} />
             <StandardPageHeader
               title={t("common.welcome_user", { name: userFirstName })}
             />
             <Grid container spacing={3}>
-              {[1, 2, 3, 4, 5, 6].map((key) => (
-                <Grid key={key.toString()} item xs={12} md={4}>
-                  <Paper>
-                    <ListItem>
-                      <ListItemText>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Rhoncus dolor purus non enim praesent
-                        elementum facilisis leo vel.
-                      </ListItemText>
-                    </ListItem>
-                  </Paper>
-                </Grid>
-              ))}
+              <Grid item xs={12} md={4}>
+                <Paper>
+                  <ListItem>
+                    <ListItemText>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua. Rhoncus dolor purus non enim praesent
+                      elementum facilisis leo vel.
+                    </ListItemText>
+                  </ListItem>
+                </Paper>
+              </Grid>
             </Grid>
           </div>
         </Fade>
