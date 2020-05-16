@@ -2,12 +2,12 @@ import { combineReducers } from "redux";
 
 import user from "./user";
 import settings from "./settings";
-import businessProfile from "./businessProfile";
+import services from "./services";
 
 const reducer = combineReducers({
   user,
   settings,
-  businessProfile,
+  services,
 });
 
 const root = (state, action) => {

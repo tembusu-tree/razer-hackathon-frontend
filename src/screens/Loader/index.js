@@ -2,6 +2,7 @@ import React from "react";
 import GridLoader from "react-spinners/GridLoader";
 import { makeStyles } from "@material-ui/core/styles";
 import useTheming from "../../utils/hooks/useTheming";
+import clsx from "clsx";
 
 const styles = makeStyles((theme) => ({
   container: {
@@ -14,16 +15,19 @@ const styles = makeStyles((theme) => ({
     justifyContent: "center",
     backgroundColor: theme.palette.background.default,
   },
+  compact: {
+    height: 'auto',
+  }
 }));
 
-const Loader = () => {
+const Loader = ({ compact = false }) => {
   const classes = styles();
   const { palette } = useTheming();
 
   return (
-    <div className={classes.container}>
+    <div className={clsx(classes.container, compact && classes.compact)}>
       <div>
-        <GridLoader color={palette.dashboard.iconColor} size={12} loading />
+        <GridLoader color={palette.primary.main} size={12} loading />
       </div>
     </div>
   );

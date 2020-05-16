@@ -122,6 +122,15 @@
     "singtel_description": "Pay for internet and phone bills with our seamless and solid integration.",
     "start_now": "Start now"
   },
+  "home": {
+    "balance": "Your current balance",
+    "spending": "Spending this month",
+    "loan_repayments": "Loan repayments",
+    "learn_more": "Learn more"
+  },
+  "currency": {
+    "sgd": "SGD"
+  },
   "rewards": {
     "title": "Current Rewards",
     "not_available": "Not available",
@@ -129,7 +138,7 @@
     "reward_placeholder_title_1": "GrabPay",
     "reward_placeholder_description_1": "$5 off your next GrabFood bill paid using GrabPay.",
     "reward_placeholder_title_2": "Starhub",
-    "reward_placeholder_description_2": "S$10 off your next monthly bill.",
+    "reward_placeholder_description_2": "$10 off your next monthly bill.",
     "reward_placeholder_title_3": "Digital Ocean",
     "reward_placeholder_description_3": "5$ off valid for the next 3 months.",
 

@@ -34,7 +34,17 @@ export const register = async (
   mobile
 ) => {
   // TODO: generate payload
-  const data = {};
+  const data = {
+    acra,
+    businessType,
+    businessSize,
+    companyMobile,
+    email,
+    password,
+    firstName,
+    lastName,
+    mobile,
+  };
 
   return post("auth/register", data)
     .then(handleResponse)

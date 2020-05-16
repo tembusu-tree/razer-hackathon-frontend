@@ -21,7 +21,7 @@ import { useDispatch, connect } from "react-redux";
 import {
   selectBusinessProfile,
   deselectBusinessProfile,
-} from "../../redux/actions/businessProfile";
+} from "../../redux/actions/services";
 import { useHistory } from "react-router-dom";
 import clsx from "clsx";
 
@@ -191,8 +191,8 @@ function BusinessProfile(props) {
 }
 
 const mapStateToProps = (state) => {
-  const { businessProfile } = state;
-  return { profileByKey: businessProfile.byKey };
+  const { services } = state;
+  return { profileByKey: services.bpByKey };
 };
 
 export default connect(mapStateToProps)(BusinessProfile);

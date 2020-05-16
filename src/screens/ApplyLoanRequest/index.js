@@ -120,7 +120,7 @@ function ApplyLoanRequest() {
                 <b>{t("apply_loan_request.loan_value")}</b>
               </Typography>
               <Typography variant="h4" color="primary">
-                <b>{`S$ ${formatNumber(loanAmount)}`}</b>
+                <b>{`SGD ${formatNumber(loanAmount)}`}</b>
               </Typography>
               <Spacing height={4} />
               <Typography variant="h6">
@@ -142,10 +142,10 @@ function ApplyLoanRequest() {
               </Box>
               <div className={classes.sliderInfoContainer}>
                 <Typography>
-                  <b>{`S$${formatNumber(MIN_LOAN_AMOUNT)}`}</b>
+                  <b>{`SGD${formatNumber(MIN_LOAN_AMOUNT)}`}</b>
                 </Typography>
                 <Typography>
-                  <b>{`S$${formatNumber(MAX_LOAN_AMOUNT)}`}</b>
+                  <b>{`SGD${formatNumber(MAX_LOAN_AMOUNT)}`}</b>
                 </Typography>
               </div>
               <Spacing height={6} />
