@@ -6,6 +6,20 @@
     "services": "Services",
     "settings": "Settings"
   },
+  "landing": {
+    "our_products": "Our products",
+    "contact_us": "Contact us",
+    "login": "Login",
+    "sign_up": "Sign up",
+    "intro_message": "Kick-start your entrepreneurship journey with us now!",
+    "apply_for_account": "Register your business now",
+    "reliability": "Reliability",
+    "reliability_description": "Secure a micro-loan from your spending habits",
+    "long_term": "Long term benefit",
+    "long_term_description": "Get guaranteed long term security from our platform",
+    "security": "Security",
+    "security_description": "Your financial security is our top priority"
+  },
   "errors": {
     "not_found_title": "Looks like you're lost",
     "not_found_description": "the page you're looking for doesn't exist"

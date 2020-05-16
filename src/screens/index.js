@@ -24,6 +24,6 @@ const NotFound = Loadable({
 const Landing = Loadable({
   loader: () => import("./Landing"),
   loading: Loader,
-})
+});
 
 export { Home, Landing, Login, Settings, NotFound };
