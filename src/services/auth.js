@@ -46,12 +46,11 @@ export const register = async (
     mobile,
   };
 
-  return post("auth/register", data)
+  return post("clients", data)
     .then(handleResponse)
     .then((data) => {
-      // TODO: get token, set to local storage and return
-      const token = "??";
+      const token = data.token;
       setToken(token);
-      return data || token;
+      return token;
     });
 };

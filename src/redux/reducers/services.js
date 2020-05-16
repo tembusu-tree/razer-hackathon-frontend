@@ -23,7 +23,13 @@ function mapPartnersToList(data) {
 function services(
   state = {
     // biz profile
-    bpByKey: {}, // business profile by key
+    bpByKey: {
+      // uncomment to test
+      // store_front: true,
+      // online: true,
+      // fashion: true,
+      // food: true,
+    }, // business profile by key
 
     // partners
     partnersByKey: {},

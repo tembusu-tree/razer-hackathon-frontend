@@ -126,7 +126,9 @@
     "balance": "Your current balance",
     "spending": "Spending this month",
     "loan_repayments": "Loan repayments",
-    "learn_more": "Learn more"
+    "learn_more": "Learn more",
+    "some_service": "{{name}} services",
+    "latest_news": "Latest news"
   },
   "currency": {
     "sgd": "SGD"

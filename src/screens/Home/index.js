@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import StandardPageHeader from "../../components/StandardPageHeader";
 import { connect, useDispatch } from "react-redux";
 import CardContent from '@material-ui/core/CardContent';
-import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
 import useLanguage from "../../utils/hooks/useLanguage";
 import Spacing from "../../components/Spacing";
 import Typography from "@material-ui/core/Typography";
@@ -39,6 +39,9 @@ const styles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-end',
     marginBottom: theme.spacing(-2.5),
+  },
+  paper: {
+    height: '100%'
   }
 }));
 
@@ -55,15 +58,18 @@ function Home(props) {
 
   // for react-loadable
   const imageKeyMap = {
-    godaddy: require('../../assets/images/azure.jpg'),
-    office_365: require('../../assets/images/azure.jpg'),
-    intuit: require('../../assets/images/azure.jpg'),
-    shopify: require('../../assets/images/azure.jpg'),
-    moka_pos: require('../../assets/images/azure.jpg'),
-    wework: require('../../assets/images/azure.jpg'),
-    food_panda: require('../../assets/images/azure.jpg'),
-    red_mart: require('../../assets/images/azure.jpg'),
-    shopback: require('../../assets/images/azure.jpg'),
+    godaddy: require('../../assets/images/go_daddy.jpg'),
+    office_365: require('../../assets/images/office_365.jpg'),
+    intuit: require('../../assets/images/intuit.jpg'),
+    azure: require('../../assets/images/azure.jpg'),
+    aws: require('../../assets/images/aws.png'),
+    shopify: require('../../assets/images/shopify.jpg'),
+    moka_pos: require('../../assets/images/moka_pos.jpg'),
+    wework: require('../../assets/images/wework.jpg'),
+    food_panda: require('../../assets/images/foodpanda.jpg'),
+    red_mart: require('../../assets/images/redmart.jpg'),
+    zalora: require('../../assets/images/zalora.jpg'),
+    shopback: require('../../assets/images/shopback.jpg'),
   }
 
   return (
@@ -77,7 +83,7 @@ function Home(props) {
             />
             <Grid container spacing={3}>
               <Grid item xs={12} md={4}>
-                <Paper>
+                <Paper className={classes.paper}>
                   <CardContent>
                     <Typography variant="h5">
                       <b>{t(`home.balance`)}</b>
@@ -102,7 +108,7 @@ function Home(props) {
                 </Paper>
               </Grid>
               <Grid item xs={12} md={4}>
-                <Paper>
+                <Paper className={classes.paper}>
                   <CardContent>
                     <Typography variant="h5">
                       <b>{t(`home.spending`)}</b>
@@ -127,7 +133,7 @@ function Home(props) {
                 </Paper>
               </Grid>
               <Grid item xs={12} md={4}>
-                <Paper>
+                <Paper className={classes.paper}>
                   <CardContent>
                     <Typography variant="h5">
                       <b>{t(`home.loan_repayments`)}</b>
@@ -152,7 +158,15 @@ function Home(props) {
                 </Paper>
               </Grid>
             </Grid>
-            <Spacing height={8} />
+            <Spacing height={6} />
+            {/* <StandardPageHeader title={t("home.latest_news")} />
+            <Grid container>
+              {
+                [1, 2, 3].map((i) => (
+                  null
+                ))
+              }
+            </Grid> */}
             {
               isFetchingPartners &&
               <Loader compact />
@@ -163,8 +177,8 @@ function Home(props) {
 
                 return (
                   <>
-                    <StandardPageHeader title={t(`home.${key}`)} />
-                    <Grid container direction="row">
+                    <StandardPageHeader title={t("home.some_service", { name: t(`business_profile.${key}`) })} />
+                    <Grid container alignItems="stretch" direction="row" spacing={2}>
                       {arr.map((service) => {
                         return (
                           <Grid item xs={12} sm={12} md={4} lg={3}>
@@ -177,6 +191,7 @@ function Home(props) {
                         )
                       })}
                     </Grid>
+                    <Spacing height={6} />
                   </>
                 )
               })
