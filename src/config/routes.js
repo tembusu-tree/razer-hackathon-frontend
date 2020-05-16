@@ -5,6 +5,7 @@ import {
   Settings,
   Login,
   Register,
+  BusinessProfile,
 } from "../screens";
 
 export const publicRoutes = [
@@ -42,6 +43,11 @@ export const privateRoutes = [
   {
     key: "services",
     link: "/services",
+  },
+  {
+    key: "business_profile",
+    link: "/business/profile",
+    component: BusinessProfile,
   },
   {
     key: "settings",

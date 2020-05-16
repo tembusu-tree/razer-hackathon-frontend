@@ -126,6 +126,8 @@ function RegisterPersonal() {
   const [businessType, setBusinessType] = useState("");
   const [companySize, setCompanySize] = useState("");
   const [companyMobile, setCompanyMobile] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -152,6 +154,14 @@ function RegisterPersonal() {
 
   function onCompanyMobileChange(event) {
     setCompanyMobile(event.target.value);
+  }
+
+  function onFirstNameChange(event) {
+    setFirstName(event.target.value);
+  }
+
+  function onLastNameChange(event) {
+    setLastName(event.target.value);
   }
 
   function onEmailChange(event) {
@@ -183,6 +193,8 @@ function RegisterPersonal() {
   const isCompanySizeValid = isTextLengthGte(companySize, 1);
   const isCompanyMobileValid = isValidMobilePhone(companyMobile);
 
+  const isFirstNameValid = isTextLengthGte(firstName, 1);
+  const isLastNameValid = isTextLengthGte(lastName, 1);
   const isEmailValid = isValidEmail(email);
   const isMobileValid = isValidMobilePhone(mobile);
   const isPasswordValid = isValidPassword(password);
@@ -197,6 +209,8 @@ function RegisterPersonal() {
     isEmailValid &&
     isPasswordValid &&
     isConfirmPasswordValid &&
+    isFirstNameValid &&
+    isLastNameValid &&
     isMobileValid;
 
   return (
@@ -282,6 +296,32 @@ function RegisterPersonal() {
                     <Typography variant="h5">
                       <b>{t("register.profile_details")}</b>
                     </Typography>
+                  </ListItem>
+                  <Spacing height={2} />
+                  <ListItem>
+                    <TextField
+                      error={!!firstName && !isFirstNameValid}
+                      value={firstName}
+                      onChange={onFirstNameChange}
+                      type="text"
+                      fullWidth
+                      label={t("input.first_name")}
+                      size="small"
+                      variant="outlined"
+                    />
+                  </ListItem>
+                  <Spacing height={2} />
+                  <ListItem>
+                    <TextField
+                      error={!!lastName && !isLastNameValid}
+                      value={lastName}
+                      onChange={onLastNameChange}
+                      type="text"
+                      fullWidth
+                      label={t("input.last_name")}
+                      size="small"
+                      variant="outlined"
+                    />
                   </ListItem>
                   <Spacing height={2} />
                   <ListItem>

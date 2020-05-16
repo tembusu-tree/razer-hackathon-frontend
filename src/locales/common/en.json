@@ -4,7 +4,8 @@
     "loans": "Apply for Loans",
     "bills": "Pay Bills",
     "services": "Services",
-    "settings": "Settings"
+    "settings": "Settings",
+    "business_profile": "Business Profile"
   },
   "landing": {
     "our_products": "Our products",
@@ -56,6 +57,20 @@
     "email": "E-mail",
     "password": "Password",
     "confirm_password": "Confirm password",
+    "first_name": "First name",
+    "last_name": "Last name",
     "phone_number": "Phone number"
+  },
+  "business_profile": {
+    "title": "Which phrases best describes your business?",
+    "update": "Update",
+    "online": "Online",
+    "food": "Food and beverages",
+    "fashion": "Fashion",
+    "financial_services": "Financial services",
+    "store_front": "Store front",
+    "delivery": "Delivery",
+    "manufacturing": "Manufacturing",
+    "skip": "Skip this step"
   }
 }

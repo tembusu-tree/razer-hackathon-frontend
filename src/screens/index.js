@@ -31,4 +31,9 @@ const Register = Loadable({
   loading: Loader,
 });
 
-export { Home, Register, Landing, Login, Settings, NotFound };
+const BusinessProfile = Loadable({
+  loader: () => import("./BusinessProfile"),
+  loading: Loader,
+});
+
+export { Home, Register, BusinessProfile, Landing, Login, Settings, NotFound };

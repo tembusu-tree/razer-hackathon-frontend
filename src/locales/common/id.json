@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Home",
-    "counter": "Counter",
-    "analytics": "Analitika",
-    "history": "Sejarah",
+    "loans": "Peminjaman",
+    "bills": "Pembayaran Bill",
+    "services": "Servis",
     "settings": "Pengaturan",
-    "company": "Perusahaan Saya"
+    "business_profile": "Profil Bisnis"
   },
   "errors": {
     "not_found_title": "Kelihatannya anda tersesat",
