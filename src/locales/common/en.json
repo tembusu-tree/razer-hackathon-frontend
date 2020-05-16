@@ -103,8 +103,8 @@
     "apply_now": "Apply now",
     "contact_representative": "Contact representative",
     "back_to_selection": "Back to selection",
-    "none_selected_title": "Oops! It seems like you didn't choose to share any data...",
-    "none_selected_description": "We collect these data to make sure that we can learn best from your spendings. Regardless, we have recorded your interest and you can contact one of our respresentatives immediately."
+    "none_selected_title": "Oops! It seems like you chose not to share any data...",
+    "none_selected_description": "We collect these data to make sure that we can learn best from your spending habits. Regardless, we have recorded your interest and you can contact one of our respresentatives immediately."
   },
   "apply_loan_success": {
     "title": "Your application is successful",

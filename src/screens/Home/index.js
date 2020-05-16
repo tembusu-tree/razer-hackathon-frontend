@@ -92,7 +92,7 @@ function Home(props) {
                     <Spacing height={2} />
                     <div className={classes.balanceTextContainer}>
                       <Typography color="primary" variant="h2">
-                        <b>{formatNumber("2000")}</b>
+                        <b>{formatNumber("0")}</b>
                       </Typography>
                       <Spacing width={1} />
                       <div style={{ marginBottom: spacing(1) }}>
@@ -160,14 +160,6 @@ function Home(props) {
               </Grid>
             </Grid>
             <Spacing height={6} />
-            {/* <StandardPageHeader title={t("home.latest_news")} />
-            <Grid container>
-              {
-                [1, 2, 3].map((i) => (
-                  null
-                ))
-              }
-            </Grid> */}
             {isFetchingPartners && (
               <>
                 <Loader compact />

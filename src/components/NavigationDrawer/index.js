@@ -15,6 +15,7 @@ import Box from "@material-ui/core/Box";
 import useTheming from "../../utils/hooks/useTheming";
 import { generateRandomImageURL } from "../../utils/common";
 import { logout } from "../../services/auth";
+import Spacing from "../Spacing";
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 const drawerWidth = 240;
@@ -138,11 +139,14 @@ function NavigationDrawer(props) {
               );
             })}
           </List>
-          <ListItem className={classes.listItem} button onClick={onPressLogout}>
-            <ListItemText className={classes.navText}>
-              {t("nav.logout")}
-            </ListItemText>
-          </ListItem>
+          <div>
+            <ListItem className={classes.listItem} button onClick={onPressLogout}>
+              <ListItemText className={classes.navText}>
+                {t("nav.logout")}
+              </ListItemText>
+            </ListItem>
+            <Spacing height={2} />
+          </div>
         </div>
       </div>
     </div>

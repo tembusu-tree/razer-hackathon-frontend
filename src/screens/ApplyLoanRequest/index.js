@@ -47,14 +47,16 @@ const styles = makeStyles((theme) => ({
 
 function ApplyLoanRequest() {
   const [loanAmount, setLoanAmount] = useState(MIN_LOAN_AMOUNT);
-  const [loanInterest, setLoanInterest] = useState(20);
+  
+  const { state } = useLocation();
+  const selected = state ? state.selected : [];
+  
+  const [loanInterest, setLoanInterest] = useState(calculateInterestRate(selected, MIN_LOAN_AMOUNT));
   const [loading, setLoading] = useState(false);
   const classes = styles();
   const { spacing } = useTheming();
   const { t } = useLanguage();
   const history = useHistory();
-  const { state } = useLocation();
-  const selected = state ? state.selected : [];
 
   if (!state || selected.length <= 0) {
     return (
@@ -140,7 +142,7 @@ function ApplyLoanRequest() {
                 <Slider
                   onChange={onSliderChange}
                   onChangeCommitted={onSliderChangeEnd}
-                  valueLabelDisplay="auto"
+                  // valueLabelDisplay="auto"
                   step={500}
                   min={MIN_LOAN_AMOUNT}
                   max={MAX_LOAN_AMOUNT}
