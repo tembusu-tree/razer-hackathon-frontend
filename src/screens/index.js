@@ -57,9 +57,14 @@ const ApplyLoanSuccess = Loadable({
 });
 
 const Rewards = Loadable({
-  loader: () => import('./Rewards'),
+  loader: () => import("./Rewards"),
   loading: Loader,
-})
+});
+
+const Services = Loadable({
+  loader: () => import("./Services"),
+  loading: Loader,
+});
 
 export {
   Home,
@@ -72,6 +77,7 @@ export {
   PayBills,
   Login,
   Rewards,
+  Services,
   Settings,
   NotFound,
 };

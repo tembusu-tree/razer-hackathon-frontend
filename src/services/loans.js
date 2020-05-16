@@ -10,7 +10,9 @@ export async function fetchInterestRate(loanAmount) {
 
 export async function requestLoan(loanAmount, interestRate) {
   // TODO: amend endpoint
-  return post("loans", { loanAmount, interestRate }, generateOptions()).then(
-    handleResponse
-  );
+  return post(
+    "loans",
+    { amount: loanAmount, interestRate },
+    generateOptions()
+  ).then(handleResponse);
 }

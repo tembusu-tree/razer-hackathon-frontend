@@ -22,6 +22,9 @@ import {
   isValidPassword,
 } from "../../utils/common";
 import { useHistory } from "react-router-dom";
+import { register } from "../../services/auth";
+import { useDispatch } from "react-redux";
+import { receiveUserData } from "../../redux/actions/user";
 
 const styles = makeStyles((theme) => ({
   container: {
@@ -139,6 +142,7 @@ function RegisterPersonal() {
   const { t } = useTranslation();
   const { spacing } = useTheming();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   function onAcraNumberChange(event) {
     setAcra(event.target.value);
@@ -183,10 +187,23 @@ function RegisterPersonal() {
   function onRegister() {
     setLoading(true);
     // TODO: change to register service
-    setTimeout(() => {
-      setLoading(false);
-      history.push("/business/profile");
-    }, 2000);
+    register(
+      acra,
+      businessType,
+      companySize,
+      companyMobile,
+      email,
+      password,
+      firstName,
+      lastName,
+      mobile
+    )
+      .then((data) => {
+        dispatch(receiveUserData(data));
+        setLoading(false);
+        history.push("/business/profile");
+      })
+      .catch(() => setLoading(false));
   }
 
   const isAcraValid = isTextLengthGte(acra, 4);

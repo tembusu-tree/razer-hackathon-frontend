@@ -6,17 +6,17 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import StandardPageHeader from "../../components/StandardPageHeader";
 import { connect, useDispatch } from "react-redux";
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
+import CardContent from "@material-ui/core/CardContent";
 import useLanguage from "../../utils/hooks/useLanguage";
 import Spacing from "../../components/Spacing";
 import Typography from "@material-ui/core/Typography";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import { formatNumber } from "../../utils/common";
 import useTheming from "../../utils/hooks/useTheming";
 import Loader from "../Loader";
 import { getPartners } from "../../redux/actions/services";
 import ServiceCard from "../../components/ServiceCard";
+import { getUserProfile } from "../../redux/actions/user";
 
 const styles = makeStyles((theme) => ({
   container: {
@@ -31,18 +31,18 @@ const styles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   balanceTextContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'flex-end'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-end",
   },
   learnMoreContainer: {
-    display: 'flex',
-    justifyContent: 'flex-end',
+    display: "flex",
+    justifyContent: "flex-end",
     marginBottom: theme.spacing(-2.5),
   },
   paper: {
-    height: '100%'
-  }
+    height: "100%",
+  },
 }));
 
 function Home(props) {
@@ -54,23 +54,24 @@ function Home(props) {
 
   useEffect(() => {
     dispatch(getPartners());
-  }, [])
+    dispatch(getUserProfile());
+  }, []);
 
   // for react-loadable
   const imageKeyMap = {
-    godaddy: require('../../assets/images/go_daddy.jpg'),
-    office_365: require('../../assets/images/office_365.jpg'),
-    intuit: require('../../assets/images/intuit.jpg'),
-    azure: require('../../assets/images/azure.jpg'),
-    aws: require('../../assets/images/aws.png'),
-    shopify: require('../../assets/images/shopify.jpg'),
-    moka_pos: require('../../assets/images/moka_pos.jpg'),
-    wework: require('../../assets/images/wework.jpg'),
-    food_panda: require('../../assets/images/foodpanda.jpg'),
-    red_mart: require('../../assets/images/redmart.jpg'),
-    zalora: require('../../assets/images/zalora.jpg'),
-    shopback: require('../../assets/images/shopback.jpg'),
-  }
+    godaddy: require("../../assets/images/go_daddy.jpg"),
+    office_365: require("../../assets/images/office_365.jpg"),
+    intuit: require("../../assets/images/intuit.jpg"),
+    azure: require("../../assets/images/azure.jpg"),
+    aws: require("../../assets/images/aws.png"),
+    shopify: require("../../assets/images/shopify.jpg"),
+    moka_pos: require("../../assets/images/moka_pos.jpg"),
+    wework: require("../../assets/images/wework.jpg"),
+    food_panda: require("../../assets/images/foodpanda.jpg"),
+    red_mart: require("../../assets/images/redmart.jpg"),
+    zalora: require("../../assets/images/zalora.jpg"),
+    shopback: require("../../assets/images/shopback.jpg"),
+  };
 
   return (
     <div className={classes.container}>
@@ -91,18 +92,18 @@ function Home(props) {
                     <Spacing height={2} />
                     <div className={classes.balanceTextContainer}>
                       <Typography color="primary" variant="h2">
-                        <b>{formatNumber('2000')}</b>
+                        <b>{formatNumber("2000")}</b>
                       </Typography>
                       <Spacing width={1} />
                       <div style={{ marginBottom: spacing(1) }}>
-                        <Typography color="textPrimary" variant="h6">{t('currency.sgd')}</Typography>
+                        <Typography color="textPrimary" variant="h6">
+                          {t("currency.sgd")}
+                        </Typography>
                       </div>
                     </div>
                     <Spacing height={2} />
                     <div className={classes.learnMoreContainer}>
-                      <Button color="primary">
-                        {t('home.learn_more')}
-                      </Button>
+                      <Button color="primary">{t("home.learn_more")}</Button>
                     </div>
                   </CardContent>
                 </Paper>
@@ -116,18 +117,18 @@ function Home(props) {
                     <Spacing height={2} />
                     <div className={classes.balanceTextContainer}>
                       <Typography color="primary" variant="h2">
-                        <b>{formatNumber('0')}</b>
+                        <b>{formatNumber("0")}</b>
                       </Typography>
                       <Spacing width={1} />
                       <div style={{ marginBottom: spacing(1) }}>
-                        <Typography color="textPrimary" variant="h6">{t('currency.sgd')}</Typography>
+                        <Typography color="textPrimary" variant="h6">
+                          {t("currency.sgd")}
+                        </Typography>
                       </div>
                     </div>
                     <Spacing height={2} />
                     <div className={classes.learnMoreContainer}>
-                      <Button color="primary">
-                        {t('home.learn_more')}
-                      </Button>
+                      <Button color="primary">{t("home.learn_more")}</Button>
                     </div>
                   </CardContent>
                 </Paper>
@@ -141,18 +142,18 @@ function Home(props) {
                     <Spacing height={2} />
                     <div className={classes.balanceTextContainer}>
                       <Typography color="primary" variant="h2">
-                        <b>{formatNumber('0')}</b>
+                        <b>{formatNumber("0")}</b>
                       </Typography>
                       <Spacing width={1} />
                       <div style={{ marginBottom: spacing(1) }}>
-                        <Typography color="textPrimary" variant="h6">{'%'}</Typography>
+                        <Typography color="textPrimary" variant="h6">
+                          {"%"}
+                        </Typography>
                       </div>
                     </div>
                     <Spacing height={2} />
                     <div className={classes.learnMoreContainer}>
-                      <Button color="primary">
-                        {t('home.learn_more')}
-                      </Button>
+                      <Button color="primary">{t("home.learn_more")}</Button>
                     </div>
                   </CardContent>
                 </Paper>
@@ -167,35 +168,53 @@ function Home(props) {
                 ))
               }
             </Grid> */}
-            {
-              isFetchingPartners &&
-              <Loader compact />
-            }
-            {
-              Object.keys(suggestedByKey).map((key) => {
-                const arr = Array.isArray(suggestedByKey[key]) ? suggestedByKey[key] : [];
+            {isFetchingPartners && (
+              <>
+                <Loader compact />
+                <Spacing height={3} />
+              </>
+            )}
+            {Object.keys(suggestedByKey).map((key) => {
+              const arr = Array.isArray(suggestedByKey[key])
+                ? suggestedByKey[key]
+                : [];
 
-                return (
-                  <>
-                    <StandardPageHeader title={t("home.some_service", { name: t(`business_profile.${key}`) })} />
-                    <Grid container alignItems="stretch" direction="row" spacing={2}>
-                      {arr.map((service) => {
-                        return (
-                          <Grid item xs={12} sm={12} md={4} lg={3}>
-                            <ServiceCard
-                              title={service.name}
-                              description={service.description}
-                              image={imageKeyMap[service.key]}
-                            />
-                          </Grid>
-                        )
-                      })}
-                    </Grid>
-                    <Spacing height={6} />
-                  </>
-                )
-              })
-            }
+              return (
+                <div key={key}>
+                  <StandardPageHeader
+                    title={t("home.some_service", {
+                      name: t(`business_profile.${key}`),
+                    })}
+                  />
+                  <Grid
+                    container
+                    alignItems="stretch"
+                    direction="row"
+                    spacing={2}
+                  >
+                    {arr.map((service) => {
+                      return (
+                        <Grid
+                          key={service.name}
+                          item
+                          xs={12}
+                          sm={12}
+                          md={4}
+                          lg={3}
+                        >
+                          <ServiceCard
+                            title={service.name}
+                            description={service.description}
+                            image={imageKeyMap[service.key]}
+                          />
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                  <Spacing height={6} />
+                </div>
+              );
+            })}
           </div>
         </Fade>
       </Container>

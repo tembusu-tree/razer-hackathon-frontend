@@ -7,7 +7,7 @@ export function setLocalStorageItem(key, value) {
     stored = JSON.stringify(value);
   }
 
-  return stored;
+  return localStorage.setItem(key, stored);
 }
 
 export function getLocalStorageItem(key, asJson = false) {

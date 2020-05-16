@@ -10,11 +10,12 @@ import Spacing from "../../components/Spacing";
 import Box from "@material-ui/core/Box";
 import Slider from "@material-ui/core/Slider";
 import { MIN_LOAN_AMOUNT, MAX_LOAN_AMOUNT } from "../../config";
-import { formatNumber } from "../../utils/common";
+import { formatNumber, calculateInterestRate } from "../../utils/common";
 import useTheming from "../../utils/hooks/useTheming";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import { useHistory, useLocation } from "react-router-dom";
+import { requestLoan } from "../../services/loans";
 
 const styles = makeStyles((theme) => ({
   container: {
@@ -53,8 +54,9 @@ function ApplyLoanRequest() {
   const { t } = useLanguage();
   const history = useHistory();
   const { state } = useLocation();
+  const selected = state ? state.selected : [];
 
-  if (!state || (state && state.selected && state.selected.length <= 0)) {
+  if (!state || selected.length <= 0) {
     return (
       <div className={classes.container}>
         <Container maxWidth="sm">
@@ -94,16 +96,20 @@ function ApplyLoanRequest() {
 
   function onSliderChange(event, value) {
     setLoanAmount(value);
-    const plus = ((value - MIN_LOAN_AMOUNT) * 30) / MAX_LOAN_AMOUNT;
-    setLoanInterest(Math.floor(20 + plus));
+  }
+
+  function onSliderChangeEnd(event, value) {
+    setLoanInterest(calculateInterestRate(selected, value));
   }
 
   function onLoanApply() {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      history.push("/loans/request/success");
-    }, 2000);
+    requestLoan(loanAmount, loanInterest)
+      .then(() => {
+        setLoading(false);
+        history.push("/loans/request/success");
+      })
+      .catch(() => setLoading(true));
   }
 
   return (
@@ -133,7 +139,7 @@ function ApplyLoanRequest() {
               <Box marginLeft={6} marginRight={6}>
                 <Slider
                   onChange={onSliderChange}
-                  onChangeCommitted={onSliderChange}
+                  onChangeCommitted={onSliderChangeEnd}
                   valueLabelDisplay="auto"
                   step={500}
                   min={MIN_LOAN_AMOUNT}

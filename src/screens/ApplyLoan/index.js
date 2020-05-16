@@ -86,7 +86,12 @@ function LinkingModal({
             <ShareLogo height={spacing(5)} width={spacing(5)} />
           </Grid>
           <Grid item>
-            <img alt={platform} src={logo} height={spacing(10)} width={spacing(10)} />
+            <img
+              alt={platform}
+              src={logo}
+              height={spacing(10)}
+              width={spacing(10)}
+            />
           </Grid>
         </Grid>
       </DialogContent>

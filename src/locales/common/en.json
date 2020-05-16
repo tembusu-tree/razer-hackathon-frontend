@@ -6,7 +6,8 @@
     "services": "Services",
     "settings": "Settings",
     "business_profile": "Business Profile",
-    "rewards": "Rewards"
+    "rewards": "Rewards",
+    "logout": "Logout"
   },
   "landing": {
     "our_products": "Our products",
@@ -128,7 +129,11 @@
     "loan_repayments": "Loan repayments",
     "learn_more": "Learn more",
     "some_service": "{{name}} services",
-    "latest_news": "Latest news"
+    "latest_news": "Latest news",
+
+    "placeholder_news_title_1": "We are expanding to Europe region",
+    "placeholder_news_title_2": "A deep dive into the mind of the genius",
+    "placeholder_news_title_3": "A deep dive into the mind of the genius"
   },
   "currency": {
     "sgd": "SGD"

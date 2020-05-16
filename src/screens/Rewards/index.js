@@ -4,13 +4,13 @@ import Card from "@material-ui/core/Card";
 import Fade from "@material-ui/core/Fade";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import SettingsItem from "../../components/SettingsItem";
 import { Helmet } from "react-helmet";
 import StandardPageHeader from "../../components/StandardPageHeader";
 import { ReactComponent as CrownLogo } from "../../assets/icons/crown.svg";
 import useLanguage from "../../utils/hooks/useLanguage";
-import useTheming from '../../utils/hooks/useTheming';
+import useTheming from "../../utils/hooks/useTheming";
 import Spacing from "../../components/Spacing";
 
 const styles = makeStyles((theme) => ({
@@ -33,7 +33,7 @@ function Rewards() {
   return (
     <div className={classes.container}>
       <Helmet>
-        <title>{t("nav.settings")}</title>
+        <title>{t("nav.rewards")}</title>
       </Helmet>
       <Fade in>
         <Container maxWidth="md">
@@ -46,12 +46,8 @@ function Rewards() {
                   title={t(`rewards.reward_placeholder_title_${key}`)}
                   subtitle={t(`rewards.reward_placeholder_description_${key}`)}
                   ActionComponent={
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      disabled
-                    >
-                      {t('rewards.not_available')}
+                    <Button color="primary" variant="contained" disabled>
+                      {t("rewards.not_available")}
                     </Button>
                   }
                 />
@@ -65,12 +61,11 @@ function Rewards() {
               <Card variant="outlined">
                 <SettingsItem
                   title={t(`rewards.achievement_placeholder_title_${key}`)}
-                  subtitle={t(`rewards.achievement_placeholder_description_${key}`)}
+                  subtitle={t(
+                    `rewards.achievement_placeholder_description_${key}`
+                  )}
                   ActionComponent={
-                    <CrownLogo
-                      width={spacing(2.5)}
-                      height={spacing(2.5)}
-                    />
+                    <CrownLogo width={spacing(2.5)} height={spacing(2.5)} />
                   }
                 />
               </Card>

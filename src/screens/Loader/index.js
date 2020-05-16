@@ -16,8 +16,8 @@ const styles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
   compact: {
-    height: 'auto',
-  }
+    height: "auto",
+  },
 }));
 
 const Loader = ({ compact = false }) => {

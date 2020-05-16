@@ -43,6 +43,17 @@ export const isNumericOnly = (string) => {
   return isNumeric(string);
 };
 
+export const calculateInterestRate = (selectedArray, amount) => {
+  let interest = 20;
+  let num = selectedArray.length - 1;
+  interest -= num * 1;
+  let extra = Math.floor(amount / 5000);
+  interest += extra * 1;
+  interest = Math.min(interest, 20);
+  interest = Math.max(interest, 11);
+  return interest;
+};
+
 export function normalizedTrim(string) {
   if (typeof string !== "string") {
     return "";

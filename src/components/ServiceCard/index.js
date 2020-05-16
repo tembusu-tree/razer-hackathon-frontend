@@ -1,16 +1,16 @@
-import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import useLanguage from '../../utils/hooks/useLanguage';
-import Spacing from '../Spacing';
+import React from "react";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+import useLanguage from "../../utils/hooks/useLanguage";
+import Spacing from "../Spacing";
 
-const styles = makeStyles((theme) => ({
+const styles = makeStyles(() => ({
   buttonContainer: {
-    alignSelf: 'flex-end',
-    justifyContent: 'flex-end',
+    alignSelf: "flex-end",
+    justifyContent: "flex-end",
   },
   cardItemContainer: {
     display: "flex",
@@ -20,15 +20,11 @@ const styles = makeStyles((theme) => ({
     objectFit: "cover",
   },
   card: {
-    height: '100%',
-  }
+    height: "100%",
+  },
 }));
 
-function ServiceCard({
-  image = null,
-  title = '',
-  description = '',
-}) {
+function ServiceCard({ image = null, title = "", description = "" }) {
   const classes = styles();
   const { t } = useLanguage();
 
@@ -47,18 +43,14 @@ function ServiceCard({
         <Typography variant="h6">
           <b>{title}</b>
         </Typography>
-        <Typography variant="caption">
-          {description}
-        </Typography>
+        <Typography variant="caption">{description}</Typography>
         <Spacing height={3} />
       </CardContent>
       <div className={classes.buttonContainer}>
-        <Button color="primary">
-          {t('home.learn_more')}
-        </Button>
+        <Button color="primary">{t("home.learn_more")}</Button>
       </div>
     </Card>
-  )
+  );
 }
 
 export default ServiceCard;

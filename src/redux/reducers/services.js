@@ -42,19 +42,19 @@ function services(
     case GET_PARTNERS_REQUEST: {
       return produce(state, (draft) => {
         draft.isFetchingPartners = true;
-      })
+      });
     }
     case GET_PARTNERS_SUCCESS: {
       return produce(state, (draft) => {
         draft.partnersByKey = action.data;
         draft.allPartners = mapPartnersToList(action.data);
         draft.isFetchingPartners = false;
-      })
+      });
     }
     case GET_PARTNERS_ERROR: {
       return produce(state, (draft) => {
         draft.isFetchingPartners = false;
-      })
+      });
     }
     case SELECT_BUSINESS_PROFILE: {
       return produce(state, (draft) => {

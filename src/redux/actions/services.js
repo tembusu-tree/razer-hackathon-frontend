@@ -24,34 +24,33 @@ export function deselectBusinessProfile(profile) {
 function getPartnersRequest() {
   return {
     type: GET_PARTNERS_REQUEST,
-  }
+  };
 }
 
 function getPartnersSuccess(data) {
   return {
     type: GET_PARTNERS_SUCCESS,
     data,
-  }
+  };
 }
 
 function getPartnersError(error) {
   return {
     type: GET_PARTNERS_ERROR,
     error,
-  }
+  };
 }
 
 export function getPartners() {
   return (dispatch) => {
     dispatch(getPartnersRequest());
-    return fetchAllServices()
-      .then(
-        (data) => {
-          dispatch(getPartnersSuccess(data));
-        },
-        (err) => {
-          dispatch(getPartnersError(err));
-        }
-      )
-  }
+    return fetchAllServices().then(
+      (data) => {
+        dispatch(getPartnersSuccess(data));
+      },
+      (err) => {
+        dispatch(getPartnersError(err));
+      }
+    );
+  };
 }

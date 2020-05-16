@@ -1,12 +1,10 @@
-// import { localStorageItemExists } from "../utils/storage";
-
 import { post } from "./http";
 import { handleResponse } from "./reqres";
-import { setToken, getToken } from "./token";
+import { setToken, getToken, removeToken } from "./token";
 
 export const isAuthenticated = () => {
-  return true;
-  // return !!getToken();
+  // return true;
+  return !!getToken();
 };
 
 export const login = async (email, password) => {
@@ -20,6 +18,10 @@ export const login = async (email, password) => {
       setToken(token);
       return data || token;
     });
+};
+
+export const logout = () => {
+  return removeToken();
 };
 
 export const register = async (
@@ -51,6 +53,6 @@ export const register = async (
     .then((data) => {
       const token = data.token;
       setToken(token);
-      return token;
+      return data;
     });
 };

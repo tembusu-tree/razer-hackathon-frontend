@@ -11,6 +11,7 @@ import {
   ApplyLoanSuccess,
   PayBills,
   Rewards,
+  Services,
 } from "../screens";
 
 export const publicRoutes = [
@@ -71,6 +72,7 @@ export const privateRoutes = [
   {
     key: "services",
     link: "/services",
+    component: Services,
   },
   {
     key: "business_profile",

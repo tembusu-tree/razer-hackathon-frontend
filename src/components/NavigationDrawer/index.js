@@ -14,6 +14,7 @@ import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import Box from "@material-ui/core/Box";
 import useTheming from "../../utils/hooks/useTheming";
 import { generateRandomImageURL } from "../../utils/common";
+import { logout } from "../../services/auth";
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 const drawerWidth = 240;
@@ -53,6 +54,12 @@ const useStyles = makeStyles((theme) => ({
   navText: {
     color: theme.palette.dashboard.textColor,
   },
+  listContainer: {
+    display: "flex",
+    flexDirection: "column",
+    height: "100%",
+    justifyContent: "space-between",
+  },
 }));
 
 function NavigationDrawer(props) {
@@ -80,6 +87,11 @@ function NavigationDrawer(props) {
     }
   };
 
+  const onPressLogout = () => {
+    logout();
+    history.push("/");
+  };
+
   const content = (
     <div className={classes.drawerContentContainer}>
       <Box
@@ -92,39 +104,46 @@ function NavigationDrawer(props) {
         <Logo width={spacing(10)} height={spacing(10)} />
       </Box>
       <div className={classes.navListContainer}>
-        <List>
-          {navItems.map((item) => {
-            const key = item.key ? item.key : null;
-            const link = item.link ? item.link : null;
+        <div className={classes.listContainer}>
+          <List>
+            {navItems.map((item) => {
+              const key = item.key ? item.key : null;
+              const link = item.link ? item.link : null;
 
-            if (!key || !link || item.nonNav) {
-              return null;
-            }
+              if (!key || !link || item.nonNav) {
+                return null;
+              }
 
-            const isActive =
-              link === "/"
-                ? location.pathname === link
-                : location.pathname.startsWith(link);
+              const isActive =
+                link === "/"
+                  ? location.pathname === link
+                  : location.pathname.startsWith(link);
 
-            return (
-              <ListItem
-                button
-                onClick={() => {
-                  onPressNavLink(link);
-                }}
-                className={clsx(
-                  isActive && classes.activeListItem,
-                  classes.listItem
-                )}
-                key={key}
-              >
-                <ListItemText className={classes.navText}>
-                  {t(`nav.${key}`)}
-                </ListItemText>
-              </ListItem>
-            );
-          })}
-        </List>
+              return (
+                <ListItem
+                  button
+                  onClick={() => {
+                    onPressNavLink(link);
+                  }}
+                  className={clsx(
+                    isActive && classes.activeListItem,
+                    classes.listItem
+                  )}
+                  key={key}
+                >
+                  <ListItemText className={classes.navText}>
+                    {t(`nav.${key}`)}
+                  </ListItemText>
+                </ListItem>
+              );
+            })}
+          </List>
+          <ListItem className={classes.listItem} button onClick={onPressLogout}>
+            <ListItemText className={classes.navText}>
+              {t("nav.logout")}
+            </ListItemText>
+          </ListItem>
+        </div>
       </div>
     </div>
   );
