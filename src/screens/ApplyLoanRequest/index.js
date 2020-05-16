@@ -47,11 +47,13 @@ const styles = makeStyles((theme) => ({
 
 function ApplyLoanRequest() {
   const [loanAmount, setLoanAmount] = useState(MIN_LOAN_AMOUNT);
-  
+
   const { state } = useLocation();
   const selected = state ? state.selected : [];
-  
-  const [loanInterest, setLoanInterest] = useState(calculateInterestRate(selected, MIN_LOAN_AMOUNT));
+
+  const [loanInterest, setLoanInterest] = useState(
+    calculateInterestRate(selected, MIN_LOAN_AMOUNT)
+  );
   const [loading, setLoading] = useState(false);
   const classes = styles();
   const { spacing } = useTheming();

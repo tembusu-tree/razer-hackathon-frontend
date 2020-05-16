@@ -140,7 +140,11 @@ function NavigationDrawer(props) {
             })}
           </List>
           <div>
-            <ListItem className={classes.listItem} button onClick={onPressLogout}>
+            <ListItem
+              className={classes.listItem}
+              button
+              onClick={onPressLogout}
+            >
               <ListItemText className={classes.navText}>
                 {t("nav.logout")}
               </ListItemText>
