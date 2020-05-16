@@ -97,7 +97,7 @@ function NavigationDrawer(props) {
             const key = item.key ? item.key : null;
             const link = item.link ? item.link : null;
 
-            if (!key || !link || key === "404") {
+            if (!key || !link || item.nonNav) {
               return null;
             }
 

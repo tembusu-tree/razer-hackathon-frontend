@@ -5,7 +5,8 @@
     "bills": "Pay Bills",
     "services": "Services",
     "settings": "Settings",
-    "business_profile": "Business Profile"
+    "business_profile": "Business Profile",
+    "rewards": "Rewards"
   },
   "landing": {
     "our_products": "Our products",
@@ -72,5 +73,23 @@
     "delivery": "Delivery",
     "manufacturing": "Manufacturing",
     "skip": "Skip this step"
+  },
+  "apply_loan": {
+    "title": "Do you use any of these platforms?",
+    "lazada": "Lazada",
+    "carousell": "Carousell",
+    "razer_pay": "RazerPay",
+    "grab_pay": "GrabPay",
+    "qoo_ten": "Qoo10",
+    "starhub": "Starhub",
+    "singtel": "Singtel",
+    "shopee": "Shopee",
+    "next": "Next"
+  },
+  "apply_loan_request": {
+    "title": "How much do you need?",
+    "loan_value": "I want to borrow",
+    "loan_interest": "with an interest rate of",
+    "apply_now": "Apply now"
   }
 }

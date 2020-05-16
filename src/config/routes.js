@@ -6,13 +6,16 @@ import {
   Login,
   Register,
   BusinessProfile,
+  ApplyLoan,
 } from "../screens";
+import ApplyLoanRequest from "../screens/ApplyLoanRequest";
 
 export const publicRoutes = [
   {
     key: "landing",
     link: "/",
     component: Landing,
+    exact: true,
   },
   {
     key: "login",
@@ -35,10 +38,23 @@ export const privateRoutes = [
   {
     key: "loans",
     link: "/loans",
+    component: ApplyLoan,
+    exact: true,
+  },
+  {
+    key: "loans_request",
+    link: "/loans/request",
+    component: ApplyLoanRequest,
+    nonNav: true,
+    exact: true,
   },
   {
     key: "bills",
     link: "/bills",
+  },
+  {
+    key: "rewards",
+    link: "/rewards",
   },
   {
     key: "services",
@@ -60,5 +76,6 @@ export const privateRoutes = [
     key: "404",
     link: "*",
     component: NotFound,
+    nonNav: true,
   },
 ];

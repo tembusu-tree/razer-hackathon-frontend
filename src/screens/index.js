@@ -36,4 +36,18 @@ const BusinessProfile = Loadable({
   loading: Loader,
 });
 
-export { Home, Register, BusinessProfile, Landing, Login, Settings, NotFound };
+const ApplyLoan = Loadable({
+  loader: () => import("./ApplyLoan"),
+  loading: Loader,
+});
+
+export {
+  Home,
+  Register,
+  ApplyLoan,
+  BusinessProfile,
+  Landing,
+  Login,
+  Settings,
+  NotFound,
+};

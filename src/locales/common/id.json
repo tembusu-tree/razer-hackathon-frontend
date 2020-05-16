@@ -2,10 +2,11 @@
   "nav": {
     "home": "Home",
     "loans": "Peminjaman",
-    "bills": "Pembayaran Bill",
+    "bills": "Pembayaran Rekening",
     "services": "Servis",
     "settings": "Pengaturan",
-    "business_profile": "Profil Bisnis"
+    "business_profile": "Profil Bisnis",
+    "rewards": "Promosi"
   },
   "errors": {
     "not_found_title": "Kelihatannya anda tersesat",

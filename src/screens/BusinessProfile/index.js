@@ -96,7 +96,7 @@ function BusinessProfile(props) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      history.push('/home');
+      history.push("/home");
     }, 1500);
   }
 
@@ -122,7 +122,7 @@ function BusinessProfile(props) {
                   const isChecked = !!profileByKey[profile.key];
 
                   return (
-                    <Grid item xs={12} sm={12} md={6} lg={6}>
+                    <Grid key={profile.key} item xs={12} sm={12} md={6} lg={6}>
                       <Card
                         variant="outlined"
                         onClick={() => onClickCheckbox(profile.key, isChecked)}
