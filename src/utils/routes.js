@@ -8,6 +8,10 @@ import memoize from "memoize-one";
 const mIsPublicRoute = (route) => {
   let isPublic = false;
 
+  if (route === "/") {
+    return true;
+  }
+
   publicRoutes.forEach((options) => {
     if (options.link === "/") {
       return;

@@ -1,10 +1,10 @@
-import { NotFound, Home, Settings, Login } from "../screens";
+import { NotFound, Landing, Home, Settings, Login } from "../screens";
 
 export const publicRoutes = [
   {
     key: "landing",
     link: "/",
-    component: Login,
+    component: Landing,
   },
   {
     key: "login",

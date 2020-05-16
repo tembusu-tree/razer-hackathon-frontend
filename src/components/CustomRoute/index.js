@@ -8,7 +8,7 @@ function CustomRoute({ privateRoute = false, children, ...props }) {
       {...props}
       render={({ location }) => {
         const redirectOptions = {
-          pathname: "/login",
+          pathname: "/",
           state: { from: location },
         };
 

@@ -10,9 +10,10 @@ import { useHistory, useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { isPublicRoute } from "../../utils/routes";
 import useLanguage from "../../utils/hooks/useLanguage";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import Box from "@material-ui/core/Box";
 import useTheming from "../../utils/hooks/useTheming";
+import { generateRandomImageURL } from "../../utils/common";
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 const drawerWidth = 240;
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   drawerPaper: {
-    backgroundImage: `url(https://i.picsum.photos/id/872/200/400.jpg)`,
+    backgroundImage: `url(${generateRandomImageURL()})`,
     backgroundSize: "cover",
     borderRight: 0,
   },
