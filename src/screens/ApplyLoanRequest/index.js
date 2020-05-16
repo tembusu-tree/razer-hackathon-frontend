@@ -50,8 +50,8 @@ function ApplyLoanRequest() {
 
   function onSliderChange(event, value) {
     setLoanAmount(value);
-    const minus = ((value - MIN_LOAN_AMOUNT) * 8) / MAX_LOAN_AMOUNT;
-    setLoanInterest(Math.floor(20 - minus));
+    const plus = ((value - MIN_LOAN_AMOUNT) * 30) / MAX_LOAN_AMOUNT;
+    setLoanInterest(Math.floor(20 + plus));
   }
 
   function onLoanApply() {
@@ -74,16 +74,16 @@ function ApplyLoanRequest() {
               <Spacing height={5} />
               <Typography variant="h6">
                 <b>{t("apply_loan_request.loan_value")}</b>
-                <Typography variant="h4" color="primary">
-                  <b>{`S$ ${formatNumber(loanAmount)}`}</b>
-                </Typography>
+              </Typography>
+              <Typography variant="h4" color="primary">
+                <b>{`S$ ${formatNumber(loanAmount)}`}</b>
               </Typography>
               <Spacing height={4} />
               <Typography variant="h6">
                 <b>{t("apply_loan_request.loan_interest")}</b>
-                <Typography variant="h4" color="primary">
-                  <b>{`${loanInterest}%`}</b>
-                </Typography>
+              </Typography>
+              <Typography variant="h4" color="primary">
+                <b>{`${loanInterest}%`}</b>
               </Typography>
               <Spacing height={6} />
               <Box marginLeft={6} marginRight={6}>

@@ -1,10 +1,15 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
-import ListItem from "@material-ui/core/ListItem";
 import Fade from "@material-ui/core/Fade";
-import ListItemText from "@material-ui/core/ListItemText";
+import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
+import useLanguage from "../../utils/hooks/useLanguage";
+import Spacing from "../../components/Spacing";
+import Button from '@material-ui/core/Button';
+import { useHistory } from "react-router-dom";
+import useTheming from "../../utils/hooks/useTheming";
 
 const styles = makeStyles((theme) => ({
   container: {
@@ -15,26 +20,42 @@ const styles = makeStyles((theme) => ({
     justifyContent: "center",
     backgroundColor: theme.palette.background.default,
   },
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
 }));
 
 function ApplyLoanSuccess() {
   const classes = styles();
+  const { t} = useLanguage();
+  const { spacing } = useTheming();
+  const history = useHistory();
 
   return (
     <div className={classes.container}>
-      <Container maxWidth="md">
+      <Container maxWidth="xs">
         <Fade in>
           <Paper>
-            <ListItem>
-              <ListItemText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Rhoncus dolor purus non enim praesent elementum facilisis leo
-                vel. Risus at ultrices mi tempus imperdiet. Semper risus in
-                hendrerit gravida rutrum quisque non tellus. Convallis convallis
-                tellus id interdum velit laoreet id donec ultrices.aa
-              </ListItemText>
-            </ListItem>
+            <CardContent>
+              <Typography variant="h5"><b>{t('apply_loan_success.title')}</b></Typography>
+              <Spacing height={3} />
+              <Typography>{t('apply_loan_success.description')}</Typography>
+              <Spacing height={3} />
+              <div
+                className={classes.buttonContainer}
+                style={{ margin: spacing(2) }}
+              >
+                <Button
+                  onClick={() => history.push('/home')}
+                  variant="contained"
+                  color="primary"
+                >
+                  {t("apply_loan_success.back_to_home")}
+                </Button>
+              </div>
+            </CardContent>
           </Paper>
         </Fade>
       </Container>

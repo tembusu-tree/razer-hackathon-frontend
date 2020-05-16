@@ -91,5 +91,10 @@
     "loan_value": "I want to borrow",
     "loan_interest": "with an interest rate of",
     "apply_now": "Apply now"
+  },
+  "apply_loan_success": {
+    "title": "Your application is successful",
+    "description": "Please check back in a few minutes to see the result of your application!",
+    "back_to_home": "Back to home"
   }
 }
