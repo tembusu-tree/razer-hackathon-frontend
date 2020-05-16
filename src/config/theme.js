@@ -12,6 +12,11 @@ const lightTheme = createMuiTheme({
       textColor: "#E0E0E0",
       hoverColor: "rgba(255,255,255,0.2)",
     },
+    background: {
+      default: "#F5F5F5",
+    },
+    white: "#ffffff",
+    black: "#000000",
   },
   typography: {
     fontFamily: "'Open Sans', 'Helvetica', 'Arial', sans-serif",

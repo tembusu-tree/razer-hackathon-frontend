@@ -16,7 +16,7 @@
     "reliability": "Reliability",
     "reliability_description": "Secure a micro-loan from your spending habits",
     "long_term": "Long term benefit",
-    "long_term_description": "Get guaranteed long term security from our platform",
+    "long_term_description": "Get guaranteed long term benefits and rewards from our platform",
     "security": "Security",
     "security_description": "Your financial security is our top priority"
   },
@@ -33,5 +33,29 @@
     "change_language_description": "Changes the display language for this site",
     "language_en": "English",
     "language_id": "Indonesian"
+  },
+  "register": {
+    "title": "Register",
+    "corppass_title": "CorpPass",
+    "corppass_description": "CorpPass is a government tool that help us to identify you as a business easily and securely.",
+    "use_corppass": "Use CorpPass",
+    "register_manually": "Register manually",
+    "business_details": "Business details",
+    "profile_details": "Profile details"
+  },
+  "particles": {
+    "or": "or"
+  },
+  "input": {
+    "acra_number": "ACRA number",
+    "type_of_business": "Type of business",
+    "company_size": "Company size",
+    "company_mobile": "Company mobile",
+    "owner_first_name": "First name (owner)",
+    "owner_last_name": "Last name (owner)",
+    "email": "E-mail",
+    "password": "Password",
+    "confirm_password": "Confirm password",
+    "phone_number": "Phone number"
   }
 }

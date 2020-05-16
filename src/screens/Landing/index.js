@@ -199,7 +199,7 @@ function Landing() {
                         }}
                       >
                         <MainIcon width={spacing(8)} height={spacing(8)} />
-                        <Spacing height={2} />
+                        <Spacing height={3} />
                         <Typography className={classes.iconTextContainer}>
                           <b>{t(`landing.${item.key}`)}</b>
                         </Typography>

@@ -51,7 +51,9 @@ function App() {
                   return (
                     <CustomRoute
                       key={i.toString()}
-                      exact={options.link === "/"}
+                      exact={
+                        options.link === "/" || options.link === "/register"
+                      }
                       path={options.path || options.link}
                     >
                       <Component />

@@ -1,4 +1,12 @@
-import { NotFound, Landing, Home, Settings, Login } from "../screens";
+import {
+  NotFound,
+  Landing,
+  Home,
+  Settings,
+  Login,
+  RegisterSuccess,
+  Register,
+} from "../screens";
 
 export const publicRoutes = [
   {
@@ -10,6 +18,16 @@ export const publicRoutes = [
     key: "login",
     link: "/login",
     component: Login,
+  },
+  {
+    key: "register",
+    link: "/register",
+    component: Register,
+  },
+  {
+    key: "register",
+    link: "/register/success",
+    component: RegisterSuccess,
   },
 ];
 
