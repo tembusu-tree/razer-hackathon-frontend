@@ -25,9 +25,7 @@ const styles = makeStyles(() => ({
 
 function App() {
   const classes = styles();
-  loadTranslations().then((t) => {
-    console.log(t("nav.home"));
-  });
+  loadTranslations();
 
   return (
     <div className={classes.app}>

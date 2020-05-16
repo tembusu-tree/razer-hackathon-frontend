@@ -14,7 +14,7 @@ import { formatNumber } from "../../utils/common";
 import useTheming from "../../utils/hooks/useTheming";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const styles = makeStyles((theme) => ({
   container: {
@@ -37,6 +37,11 @@ const styles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     alignItems: "center",
   },
+  noneButtonContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 }));
 
 function ApplyLoanRequest() {
@@ -47,6 +52,45 @@ function ApplyLoanRequest() {
   const { spacing } = useTheming();
   const { t } = useLanguage();
   const history = useHistory();
+  const { state } = useLocation();
+
+  if (!state || (state && state.selected && state.selected.length <= 0)) {
+    return (
+      <div className={classes.container}>
+        <Container maxWidth="sm">
+          <Fade in>
+            <Paper>
+              <CardContent>
+                <Typography variant="h6">
+                  <b>{t("apply_loan_request.none_selected_title")}</b>
+                </Typography>
+                <Spacing height={2} />
+                <Typography>
+                  {t("apply_loan_request.none_selected_description")}
+                </Typography>
+                <Spacing height={4} />
+                <div className={classes.noneButtonContainer}>
+                  <Button
+                    onClick={() => history.replace("/loans")}
+                    color="primary"
+                  >
+                    {t("apply_loan_request.back_to_selection")}
+                  </Button>
+                  <Button
+                    onClick={() => history.push("/home")}
+                    color="primary"
+                    variant="contained"
+                  >
+                    {t("apply_loan_request.contact_representative")}
+                  </Button>
+                </div>
+              </CardContent>
+            </Paper>
+          </Fade>
+        </Container>
+      </div>
+    );
+  }
 
   function onSliderChange(event, value) {
     setLoanAmount(value);

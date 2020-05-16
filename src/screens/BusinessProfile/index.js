@@ -23,6 +23,7 @@ import {
   deselectBusinessProfile,
 } from "../../redux/actions/businessProfile";
 import { useHistory } from "react-router-dom";
+import clsx from "clsx";
 
 const profiles = [
   { key: "online" },
@@ -30,8 +31,12 @@ const profiles = [
   { key: "food" },
   { key: "delivery" },
   { key: "fashion" },
-  { key: "manufacturing" },
   { key: "financial_services" },
+  { key: "home_based" },
+  { key: "appliances" },
+  { key: "computer_hardware" },
+  { key: "computer_software" },
+  { key: "healthcare_services" },
 ];
 
 const styles = makeStyles((theme) => ({
@@ -70,6 +75,9 @@ const styles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  cardStopper: {
+    backgroundColor: "#eeeeee",
   },
 }));
 
@@ -119,12 +127,13 @@ function BusinessProfile(props) {
               </Typography>
               <Spacing height={4} />
               <Grid container direction="row" spacing={2} wrap="wrap">
-                {profiles.map((profile) => {
+                {profiles.map((profile, i) => {
                   const isChecked = !!profileByKey[profile.key];
 
                   return (
-                    <Grid key={profile.key} item xs={12} sm={12} md={6} lg={6}>
+                    <Grid key={profile.key} item xs={12} sm={12} md={6} lg={4}>
                       <Card
+                        className={clsx(i % 2 === 0 && classes.cardStopper)}
                         variant="outlined"
                         onClick={() => onClickCheckbox(profile.key, isChecked)}
                       >

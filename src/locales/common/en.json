@@ -72,7 +72,12 @@
     "store_front": "Store front",
     "delivery": "Delivery",
     "manufacturing": "Manufacturing",
-    "skip": "Skip this step"
+    "skip": "Skip this step",
+    "home_based": "Home based",
+    "appliances": "Appliances",
+    "computer_hardware": "Computer hardware",
+    "computer_software": "Computer software",
+    "healthcare_services": "Healthcare services"
   },
   "apply_loan": {
     "title": "Do you use any of these platforms?",
@@ -84,13 +89,20 @@
     "starhub": "Starhub",
     "singtel": "Singtel",
     "shopee": "Shopee",
-    "next": "Next"
+    "next": "Next",
+    "modal_title": "Allow Tembusu Tree to access your personal data from $t(apply_loan.{{key}})?",
+    "allow": "Allow",
+    "cancel": "Cancel"
   },
   "apply_loan_request": {
     "title": "How much do you need?",
     "loan_value": "I want to borrow",
     "loan_interest": "with an interest rate of",
-    "apply_now": "Apply now"
+    "apply_now": "Apply now",
+    "contact_representative": "Contact representative",
+    "back_to_selection": "Back to selection",
+    "none_selected_title": "Oops! It seems like you didn't choose to share any data...",
+    "none_selected_description": "We collect these data to make sure that we can learn best from your spendings. Regardless, we have recorded your interest and you can contact one of our respresentatives immediately."
   },
   "apply_loan_success": {
     "title": "Your application is successful",
