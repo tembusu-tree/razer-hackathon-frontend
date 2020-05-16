@@ -9,6 +9,7 @@ import {
   ApplyLoan,
   ApplyLoanRequest,
   ApplyLoanSuccess,
+  PayBills,
 } from "../screens";
 
 export const publicRoutes = [
@@ -59,6 +60,7 @@ export const privateRoutes = [
   {
     key: "bills",
     link: "/bills",
+    component: PayBills,
   },
   {
     key: "rewards",

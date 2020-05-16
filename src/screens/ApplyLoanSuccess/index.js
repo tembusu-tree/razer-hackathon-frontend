@@ -2,12 +2,12 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Fade from "@material-ui/core/Fade";
-import CardContent from '@material-ui/core/CardContent';
+import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import useLanguage from "../../utils/hooks/useLanguage";
 import Spacing from "../../components/Spacing";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 import useTheming from "../../utils/hooks/useTheming";
 
@@ -29,7 +29,7 @@ const styles = makeStyles((theme) => ({
 
 function ApplyLoanSuccess() {
   const classes = styles();
-  const { t} = useLanguage();
+  const { t } = useLanguage();
   const { spacing } = useTheming();
   const history = useHistory();
 
@@ -39,16 +39,18 @@ function ApplyLoanSuccess() {
         <Fade in>
           <Paper>
             <CardContent>
-              <Typography variant="h5"><b>{t('apply_loan_success.title')}</b></Typography>
+              <Typography variant="h5">
+                <b>{t("apply_loan_success.title")}</b>
+              </Typography>
               <Spacing height={3} />
-              <Typography>{t('apply_loan_success.description')}</Typography>
+              <Typography>{t("apply_loan_success.description")}</Typography>
               <Spacing height={3} />
               <div
                 className={classes.buttonContainer}
                 style={{ margin: spacing(2) }}
               >
                 <Button
-                  onClick={() => history.push('/home')}
+                  onClick={() => history.push("/home")}
                   variant="contained"
                   color="primary"
                 >

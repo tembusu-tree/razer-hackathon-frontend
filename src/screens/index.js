@@ -41,15 +41,20 @@ const ApplyLoan = Loadable({
   loading: Loader,
 });
 
-const ApplyLoanRequest = Loadable({
-  loader: () => import('./ApplyLoanRequest'),
+const PayBills = Loadable({
+  loader: () => import("./PayBills"),
   loading: Loader,
-})
+});
+
+const ApplyLoanRequest = Loadable({
+  loader: () => import("./ApplyLoanRequest"),
+  loading: Loader,
+});
 
 const ApplyLoanSuccess = Loadable({
-  loader: () => import('./ApplyLoanSuccess'),
+  loader: () => import("./ApplyLoanSuccess"),
   loading: Loader,
-})
+});
 
 export {
   Home,
@@ -59,6 +64,7 @@ export {
   ApplyLoanSuccess,
   BusinessProfile,
   Landing,
+  PayBills,
   Login,
   Settings,
   NotFound,

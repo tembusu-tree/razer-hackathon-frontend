@@ -9,6 +9,7 @@ import SettingsItem from "../../components/SettingsItem";
 import { Helmet } from "react-helmet";
 import StandardPageHeader from "../../components/StandardPageHeader";
 import useLanguage from "../../utils/hooks/useLanguage";
+import Spacing from "../../components/Spacing";
 
 const languages = ["en", "id"];
 
@@ -41,6 +42,7 @@ function Settings() {
       </Helmet>
       <Fade in>
         <Container maxWidth="md">
+          <Spacing height={4} />
           <StandardPageHeader title={t("nav.settings")} />
           <Box marginBottom={2}>
             <Card variant="outlined">

@@ -24,7 +24,7 @@ const styles = makeStyles((theme) => ({
   },
 }));
 
-function Introduction(props) {
+function Home(props) {
   const { userFirstName } = props;
   const classes = styles();
   const { t } = useLanguage();
@@ -67,4 +67,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Introduction);
+export default connect(mapStateToProps)(Home);

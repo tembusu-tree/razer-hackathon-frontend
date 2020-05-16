@@ -96,5 +96,17 @@
     "title": "Your application is successful",
     "description": "Please check back in a few minutes to see the result of your application!",
     "back_to_home": "Back to home"
+  },
+  "pay_bills": {
+    "title": "Our Partners",
+    "azure": "Azure",
+    "azure_description": "Pay your cloud bills in installments or in one go with our seamless integration.",
+    "aws": "Amazon Web Services",
+    "aws_description": "Pay cloud bills in installments or in one go with our secure and stable plan.",
+    "starhub": "Starhub",
+    "starhub_description": "Pay your TV subscription, internet, and phone bills all in one go.",
+    "singtel": "Singtel",
+    "singtel_description": "Pay for internet and phone bills with our seamless and solid integration.",
+    "start_now": "Start now"
   }
 }
