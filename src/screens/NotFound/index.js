@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ReactComponent as Logo } from "../../assets/404.svg";
+import { ReactComponent as Logo } from "../../assets/icons/404.svg";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
