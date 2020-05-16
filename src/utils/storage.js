@@ -1,4 +1,4 @@
-export function setLocalStorage(key, value) {
+export function setLocalStorageItem(key, value) {
   let stored;
 
   if (typeof value === "string") {
@@ -22,4 +22,8 @@ export function getLocalStorageItem(key, asJson = false) {
 
 export function localStorageItemExists(key) {
   return !!localStorage.getItem(key);
+}
+
+export function removeLocalStorageItem(key) {
+  return localStorage.removeItem(key);
 }

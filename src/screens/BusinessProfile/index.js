@@ -94,6 +94,7 @@ function BusinessProfile(props) {
 
   function onUpdateClick() {
     setLoading(true);
+    // TODO: change to profile service
     setTimeout(() => {
       setLoading(false);
       history.push("/home");

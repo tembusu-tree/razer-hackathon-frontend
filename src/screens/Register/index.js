@@ -182,6 +182,7 @@ function RegisterPersonal() {
 
   function onRegister() {
     setLoading(true);
+    // TODO: change to register service
     setTimeout(() => {
       setLoading(false);
       history.push("/business/profile");

@@ -54,6 +54,7 @@ function Login() {
 
   function onLogin() {
     setLoading(true);
+    // TODO: change to login service
     setTimeout(() => {
       setLoading(false);
       history.push("/home");
