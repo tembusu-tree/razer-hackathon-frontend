@@ -7,8 +7,9 @@ import {
   Register,
   BusinessProfile,
   ApplyLoan,
+  ApplyLoanRequest,
+  ApplyLoanSuccess,
 } from "../screens";
-import ApplyLoanRequest from "../screens/ApplyLoanRequest";
 
 export const publicRoutes = [
   {
@@ -45,6 +46,13 @@ export const privateRoutes = [
     key: "loans_request",
     link: "/loans/request",
     component: ApplyLoanRequest,
+    nonNav: true,
+    exact: true,
+  },
+  {
+    key: "loans_request_success",
+    link: "/loans/request/success",
+    component: ApplyLoanSuccess,
     nonNav: true,
     exact: true,
   },

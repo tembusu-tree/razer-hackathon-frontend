@@ -41,10 +41,22 @@ const ApplyLoan = Loadable({
   loading: Loader,
 });
 
+const ApplyLoanRequest = Loadable({
+  loader: () => import('./ApplyLoanRequest'),
+  loading: Loader,
+})
+
+const ApplyLoanSuccess = Loadable({
+  loader: () => import('./ApplyLoanSuccess'),
+  loading: Loader,
+})
+
 export {
   Home,
   Register,
   ApplyLoan,
+  ApplyLoanRequest,
+  ApplyLoanSuccess,
   BusinessProfile,
   Landing,
   Login,

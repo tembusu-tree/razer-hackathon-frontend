@@ -64,14 +64,14 @@ function ApplyLoanRequest() {
 
   return (
     <div className={classes.container}>
-      <Container maxWidth="md">
+      <Container maxWidth="sm">
         <Fade in>
           <Paper>
             <CardContent>
               <Typography variant="h5">
                 <b>{t("apply_loan_request.title")}</b>
               </Typography>
-              <Spacing height={4} />
+              <Spacing height={5} />
               <Typography variant="h6">
                 <b>{t("apply_loan_request.loan_value")}</b>
                 <Typography variant="h4" color="primary">
